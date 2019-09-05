@@ -52,7 +52,7 @@ resource "aws_lb_target_group" "main" {
     var.target_groups_defaults["slow_start"],
   )
 
-  for_each = lookup(var.target_groups[count.index],"health_check_enabled",var.target_group_defaults["health_check_enabled"],)
+/*
   health_check {
     interval = lookup(
       var.target_groups[count.index],
@@ -97,6 +97,7 @@ resource "aws_lb_target_group" "main" {
       var.target_groups_defaults["health_check_matcher"],
     )
   }
+*/
 
   stickiness {
     type = "lb_cookie"
