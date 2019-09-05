@@ -47,6 +47,7 @@ resource "aws_lb_target_group" "main_no_logs" {
     var.target_groups_defaults["slow_start"],
   )
 
+  for_each = lookup(var.target_groups[count.index],"health_check_enabled",var.target_group_defaults["health_check_enabled"],)
   health_check {
     interval = lookup(
       var.target_groups[count.index],

@@ -164,6 +164,7 @@ variable "target_groups_defaults" {
       health_check_timeout             = string,
       health_check_unhealthy_threshold = string,
       health_check_matcher             = string,
+      health_check_enabled             = string,
       stickiness_enabled               = string,
       target_type                      = string,
       slow_start                       = string,
@@ -179,6 +180,7 @@ variable "target_groups_defaults" {
     health_check_timeout             = 5
     health_check_unhealthy_threshold = 3
     health_check_matcher             = "200-299"
+    health_check_enabled             = true
     stickiness_enabled               = true
     target_type                      = "instance"
     slow_start                       = 0
